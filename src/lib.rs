@@ -17,20 +17,21 @@ mod parse;
 ///
 /// # Example usage:
 /// ```rust
+/// use derive_declare::Declare;
+///
 /// #[derive(Declare, Debug, Default)]
 /// pub struct MyStruct {
 ///     pub field_one: String,
 ///     pub field_two: i32,
 /// }
 ///
-/// let my_struct: MyStruct = my_struct! {
+/// let foo = my_struct! {
 ///     field_one: "Hello".to_string(),
 /// };
 ///
-/// assert_eq!(my_struct.field_one, "Hello");
-/// assert_eq!(my_struct.field_two, 0);
+/// assert_eq!(foo.field_one, "Hello");
+/// assert_eq!(foo.field_two, 0);
 /// ```
-///
 #[proc_macro_derive(Declare)]
 pub fn derive(input: TokenStream) -> TokenStream {
     let ast = parse_macro_input!(input as syn::DeriveInput);
