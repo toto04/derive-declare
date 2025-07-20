@@ -22,7 +22,7 @@ pub mod tests {
     fn test_my_struct_macro() {
         let a = my_struct! {
             field_one: "Hello".to_string(),
-            field_two: 42,
+            field_two: 42
         };
 
         assert_eq!(a.field_one, "Hello");
@@ -52,7 +52,7 @@ pub mod tests {
         let field_one = "Hello".to_string();
         let a = my_struct! {
             field_one,
-            field_two: 42,
+            field_two: 42
         };
 
         assert_eq!(a.field_one, "Hello");
